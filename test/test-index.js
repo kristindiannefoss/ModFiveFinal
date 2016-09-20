@@ -8,19 +8,45 @@ describe('the test bundle', function () {
   it('isnt a garbage fire, yet', function () {
     assert(true);
   });
-});
 
-describe('the scoreWord function', function () {
-  it('can score an uppercase letter', function () {
-    const score = scoreWord('A');
-    assert.equal(1, score);
+  it('can give me objects', function () {
+    const score = scoreWord('a');
+    assert.equal(1 , score);
   });
 
-  it('can score another uppercase letter', function () {
-    const score = scoreWord('B');
-    assert.equal(3, score);
-  });
 });
+
+// describe('the scoreWord function', function () {
+//   it('can score an uppercase letter', function () {
+//     const score = scoreWord('A');
+//     assert.equal(1, score);
+//   });
+//
+//   it('can score another uppercase letter', function () {
+//     const score = scoreWord('B');
+//     assert.equal(3, score);
+//   });
+//
+//   it('can score another other uppercase letter', function () {
+//     const score = scoreWord('Z');
+//     assert.equal(10, score);
+//   });
+//
+//   it('can score an lowercase letter', function () {
+//     const score = scoreWord('a');
+//     assert.equal(1, score);
+//   });
+//
+//   it('can score another lowercase letter', function () {
+//     const score = scoreWord('b');
+//     assert.equal(3, score);
+//   });
+//
+//   it('can score another other lowercase letter', function () {
+//     const score = scoreWord('z');
+//     assert.equal(10, score);
+//   });
+// });
 
 
 // scoreWord() takes a word and returns the total score of the word.
