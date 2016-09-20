@@ -106,6 +106,11 @@ describe('the scoreWord function can multiply', function () {
     assert.equal(16 , score);
   });
 
+  it('can score with triple word score', function () {
+    const score = scoreWord('hello', 3);
+    assert.equal(24 , score);
+  });
+
 });
 
 
