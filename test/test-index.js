@@ -80,6 +80,11 @@ describe('the scoreWord function with nothing as an argument', function () {
     assert.equal(0 , score);
   });
 
+  it('returns 0 when no arguement is passed', function () {
+    const score = scoreWord();
+    assert.equal(0 , score);
+  });
+
   it('returns 0 if a number is passed', function () {
     const score = scoreWord('1');
     assert.equal(0 , score);
