@@ -8,45 +8,79 @@ describe('the test bundle', function () {
   it('isnt a garbage fire, yet', function () {
     assert(true);
   });
+});
 
-  it('can give me objects', function () {
+describe('the scoreWord function on single letters', function () {
+  it('can score an uppercase letter', function () {
+    const score = scoreWord('A');
+    assert.equal(1, score);
+  });
+
+  it('can score another uppercase letter', function () {
+    const score = scoreWord('B');
+    assert.equal(3, score);
+  });
+
+  it('can score another other uppercase letter', function () {
+    const score = scoreWord('Z');
+    assert.equal(10, score);
+  });
+
+  it('can score an lowercase letter', function () {
     const score = scoreWord('a');
-    assert.equal(1 , score);
+    assert.equal(1, score);
+  });
+
+  it('can score another lowercase letter', function () {
+    const score = scoreWord('b');
+    assert.equal(3, score);
+  });
+
+  it('can score another other lowercase letter', function () {
+    const score = scoreWord('z');
+    assert.equal(10, score);
+  });
+});
+
+describe('the scoreWord function on words', function () {
+  it('can score small words', function () {
+    const score = scoreWord('ab');
+    assert.equal(4 , score);
+  });
+
+  it('can score bigger words', function () {
+    const score = scoreWord('aaaaa');
+    assert.equal(5 , score);
+  });
+
+  it('can score other bigger words', function () {
+    const score = scoreWord('kris');
+    assert.equal(8 , score);
+  });
+
+  it('can score other bigger words with multicase letters', function () {
+    const score = scoreWord('KrIs');
+    assert.equal(8 , score);
+  });
+
+  it('can score hello', function () {
+    const score = scoreWord('hello');
+    assert.equal(8 , score);
+  });
+});
+
+describe('the scoreWord function with nothing as an argument', function () {
+  it('returns 0 when empty string is passed', function () {
+    const score = scoreWord('');
+    assert.equal(0 , score);
+  });
+
+  it('returns 0 when null is passed', function () {
+    const score = scoreWord(null);
+    assert.equal(0 , score);
   });
 
 });
-
-// describe('the scoreWord function', function () {
-//   it('can score an uppercase letter', function () {
-//     const score = scoreWord('A');
-//     assert.equal(1, score);
-//   });
-//
-//   it('can score another uppercase letter', function () {
-//     const score = scoreWord('B');
-//     assert.equal(3, score);
-//   });
-//
-//   it('can score another other uppercase letter', function () {
-//     const score = scoreWord('Z');
-//     assert.equal(10, score);
-//   });
-//
-//   it('can score an lowercase letter', function () {
-//     const score = scoreWord('a');
-//     assert.equal(1, score);
-//   });
-//
-//   it('can score another lowercase letter', function () {
-//     const score = scoreWord('b');
-//     assert.equal(3, score);
-//   });
-//
-//   it('can score another other lowercase letter', function () {
-//     const score = scoreWord('z');
-//     assert.equal(10, score);
-//   });
-// });
 
 
 // scoreWord() takes a word and returns the total score of the word.
