@@ -82,9 +82,18 @@ describe('the scoreWord function with nothing as an argument', function () {
 
 });
 
+describe('the scoreWord function must strip whitespace', function () {
+  it('can score hello with spaces', function () {
+    const score = scoreWord(' hello ');
+    assert.equal(8 , score);
+  });
+
+});
+
 
 // scoreWord() takes a word and returns the total score of the word.
 // scoreWord('hello') should return 8.
 // An empty string or any non-string (e.g. scoreWord('') or scoreWord(null)) should return 0.
+
 // The function should strip any whitespace before or after the word. scoreWorld(' hello ') should be the same as scoreWord('hello').
 // Score word should take an optional second argument for the word multiplier. scoreWord('hello', 2) should return 16.
