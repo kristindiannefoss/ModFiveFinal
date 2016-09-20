@@ -5,7 +5,7 @@ const assert = require('chai').assert;
 import scoreWord from '../lib/components/scoreWord.js';
 
 describe('the test bundle', function () {
-  it('isnt a garbage fire, yet', function () {
+  it('is connected!', function () {
     assert(true);
   });
 });
@@ -77,6 +77,26 @@ describe('the scoreWord function with nothing as an argument', function () {
 
   it('returns 0 when null is passed', function () {
     const score = scoreWord(null);
+    assert.equal(0 , score);
+  });
+
+  it('returns 0 if a number is passed', function () {
+    const score = scoreWord('1');
+    assert.equal(0 , score);
+  });
+
+  it('returns 0 if lots of numbers are passed', function () {
+    const score = scoreWord('13432');
+    assert.equal(0 , score);
+  });
+
+  it('returns 0 if a symbol is passed', function () {
+    const score = scoreWord('@');
+    assert.equal(0 , score);
+  });
+
+  it('returns 0 if lots of symbols are passed', function () {
+    const score = scoreWord('@#$% ^&* (*)');
     assert.equal(0 , score);
   });
 
